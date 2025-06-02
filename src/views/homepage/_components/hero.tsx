@@ -62,7 +62,8 @@ const HeroSection = () => {
                         width={100}
                         src={word.imagePath}
                         alt={word.text}
-                        className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
+                        className="xl:si
+                        ze-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                       />
                       <span>{word.text}</span>
                     </span>
@@ -77,7 +78,7 @@ const HeroSection = () => {
             Hi, I&apos;m Adebola based in Nigeria with a passion for code.
           </p>
           <Button
-            className="md:w-60 md:h-16 w-60 h-12 my-4"
+            className="md:w-80 md:h-16 w-60 h-12 mt-6"
             id="button"
             text="see my work"
           />
@@ -88,6 +89,7 @@ const HeroSection = () => {
           </div>
         </figure>
       </div>
+      
     </section>
   );
 };

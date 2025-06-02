@@ -64,7 +64,7 @@ export function Room(props: React.ComponentProps<"group">) {
           luminanceSmoothing={0.9} // Smooth transition
           blendFunction={BlendFunction.ADD} // How it blends
         />
-      </EffectComposer>{" "}
+      </EffectComposer>
       <mesh
         geometry={(nodes._________6_blinn1_0 as THREE.Mesh).geometry}
         material={curtainMaterial}
