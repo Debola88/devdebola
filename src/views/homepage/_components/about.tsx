@@ -1,9 +1,15 @@
 "use client";
 import { useState } from "react";
-import Globe from "react-globe.gl";
+import dynamic from 'next/dynamic';
 
 import Image from "next/image";
 import grid1 from '@/assets/public/images/new/grid1.png'
+import grid2 from '@/assets/public/images/new/grid2.png'
+import grid3 from '@/assets/public/images/new/grid3.png'
+import grid4 from '@/assets/public/images/new/grid4.png'
+import tick from '@/assets/public/images/new/tick.svg'
+import copy from '@/assets/public/images/new/copy.svg'
+
 import HeroButton from "./hero-button";
 
 const About = () => {
@@ -18,23 +24,28 @@ const About = () => {
     }, 2000);
   };
 
+  const Globe = dynamic(() => import('../_components/globe'), {
+    ssr: false,
+    loading: () => <div>Loading globe...</div>
+  });
+
   return (
     <section className="c-space my-20" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <Image
-              height={100}
-              width={100}
               src={grid1}
               alt="grid-1"
+              width={400}
+              height={276}
               className="w-full sm:h-[276px] h-fit object-contain"
             />
 
             <div>
-              <p className="grid-headtext">Hi, I’m Adrian Hajdin</p>
+              <p className="grid-headtext">Hi, Im Adebola Badejo</p>
               <p className="grid-subtext">
-                With 12 years of experience, I have honed my skills in both
+                With 3 years of experience, I have honed my skills in both
                 frontend and backend dev, creating dynamic and responsive
                 websites.
               </p>
@@ -45,10 +56,10 @@ const About = () => {
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <Image
-              height={100}
-              width={100}
-              src="/public/images/new/grid2.png"
+              src={grid2}
               alt="grid-2"
+              width={400}
+              height={276}
               className="w-full sm:h-[276px] h-fit object-contain"
             />
 
@@ -69,7 +80,7 @@ const About = () => {
                 height={326}
                 width={326}
                 backgroundColor="rgba(0, 0, 0, 0)"
-                // backgroundImageOpacity={0.5}
+                backgroundImageOpacity={0.5}
                 showAtmosphere
                 showGraticules
                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
@@ -78,7 +89,7 @@ const About = () => {
                   {
                     lat: 40,
                     lng: -100,
-                    text: "Rjieka, Croatia",
+                    text: "Lagos, Nigeria",
                     color: "white",
                     size: 15,
                   },
@@ -87,10 +98,10 @@ const About = () => {
             </div>
             <div>
               <p className="grid-headtext">
-                I’m very flexible with time zone communications & locations
+                I&apos;m very flexible with time zone communications & locations
               </p>
               <p className="grid-subtext">
-                I&apos;m based in Rjieka, Croatia and open to remote work
+                I&apos;m based in Lagos, Nigeria and open to remote work
                 worldwide.
               </p>
               <HeroButton
@@ -105,10 +116,10 @@ const About = () => {
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
             <Image
-              width={100}
-              height={100}
-              src="/public/images/new/grid3.png"
+              src={grid3}
               alt="grid-3"
+              width={400}
+              height={266}
               className="w-full sm:h-[266px] h-fit object-contain"
             />
 
@@ -126,10 +137,10 @@ const About = () => {
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container">
             <Image
-              width={100}
-              height={100}
-              src="/public/images/new/grid4.png"
+              src={grid4}
               alt="grid-4"
+              width={400}
+              height={126}
               className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
             />
 
@@ -137,14 +148,10 @@ const About = () => {
               <p className="grid-subtext text-center">Contact me</p>
               <div className="copy-container" onClick={handleCopy}>
                 <Image
-                  width={100}
-                  height={100}
-                  src={
-                    hasCopied
-                      ? "/public/images/tick.svg"
-                      : "public/images/copy.svg"
-                  }
+                  src={hasCopied ? tick : copy}
                   alt="copy"
+                  width={24}
+                  height={24}
                 />
                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">
                   adrian@jsmastery.pro
