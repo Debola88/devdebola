@@ -154,7 +154,7 @@ const About = () => {
                   height={24}
                 />
                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">
-                  adrian@jsmastery.pro
+                  adebolabadejo11@gmail.com
                 </p>
               </div>
             </div>

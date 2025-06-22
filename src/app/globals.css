@@ -28,7 +28,7 @@ section {
   --color-black-300: #3a3a45;
   --color-blue-50: #839cb5;
   --color-blue-100: #2d2d38;
-  
+  --color-neutral-100: #f5f5f5;
 }
 
 @layer utilities {
@@ -86,6 +86,15 @@ section {
 }
 .copy-container {
   @apply cursor-pointer flex justify-center items-center gap-2;
+}
+
+/* projects section  */
+.arrow-btn {
+  @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full bg-black-200;
+}
+
+.tech-logo {
+  @apply w-10 h-10 rounded-md p-2 bg-black-100 backdrop-blur-sm flex justify-center items-center;
 }
 
   /* General Grids */
