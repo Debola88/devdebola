@@ -286,7 +286,7 @@ section {
   }
 
   .timeline {
-    @apply absolute z-30 h-[110%] -top-10 w-14 md:w-28 bg-black;
+    @apply absolute z-30 h-[100%] -top-10 w-14 md:w-28 bg-black;
   }
 
   .timeline-logo {
@@ -339,6 +339,8 @@ section {
       }
     }
   }
+
+  
 
   .footer {
     @apply my-10 md:mt-20 mt-10 text-white-50 px-5 md:px-20 xl:px-20 flex items-center justify-center;

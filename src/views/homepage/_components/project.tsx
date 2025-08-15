@@ -1,11 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { myProjects } from "@/constants/index";
 import UpArrow from "@/assets/public/images/new/arrow-up.png";
 import RightArrow from "@/assets/public/images/new/right-arrow.png";
 import LeftArrow from "@/assets/public/images/new/left-arrow.png";
+import { Canvas } from "@react-three/fiber";
+import { Center, OrbitControls } from "@react-three/drei";
+import { DemoComputer } from "@/components/models/projects/demo-computer";
 
 const Project = () => {
   const [selectedPrpjectIndex, setSelectedProjectIndex] = useState(0);
@@ -24,10 +27,10 @@ const Project = () => {
   };
 
   return (
-    <section className="c-space my-20">
-      <p className="head-text">My Work</p>
+    <section className="sm:px-10 px-5 my-20">
+      <p className="sm:text-4xl text-3xl font-semibold text-gray_gradient">My Work</p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 px-5 shadow-2xl shadow-black-200">
+        <div className="flex flex-col gap-5 relative p-10 px-5 shadow-2xl shadow-black-200 text-[#afb0b6]">
           <div className="absolute top-0 right-0">
             <Image
               width={400}
@@ -111,6 +114,20 @@ const Project = () => {
               />
             </button>
           </div>
+        </div>
+        <div className="border border-black-300 bg-black-200/50 rounded-lg h-96 md:h-full">
+          <Canvas className='relative -mt-16'>
+            <ambientLight intensity={0} />
+            <directionalLight position={[10, 10, 5]} />
+            <Center>
+              <Suspense>
+                <group scale={0.5} position={[0.5, -2, 0]} rotation={[0, 4.7, 0]}>
+                  <DemoComputer />
+                </group>
+              </Suspense>
+            </Center>
+            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false}/>
+          </Canvas>
         </div>
       </div>
     </section>

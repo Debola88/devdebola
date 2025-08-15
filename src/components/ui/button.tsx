@@ -1,16 +1,15 @@
-import Image from "next/image";
-import React from "react";
-import btnarrow from "@/assets/public/images/arrow-down.svg";
+import React, { ReactNode } from "react";
 
 interface ButtonProps {
   text: string;
   className?: string;
   id?: string;
+  icon?: ReactNode;
 }
 
-const Button = ({ text, className, id }: ButtonProps) => {
+const Button = ({ text, className, id, icon }: ButtonProps) => {
   return (
-    <a 
+    <button 
     onClick={(e)=> {
       e.preventDefault();
       const target = document.getElementById('')
@@ -27,10 +26,10 @@ const Button = ({ text, className, id }: ButtonProps) => {
         <div className="bg-circle" />
         <p className="text">{text} </p>
         <div className="arrow-wrapper">
-          <Image src={btnarrow} alt="arrow" />
+          {icon}
         </div>
       </div>
-    </a>
+    </button>
   );
 };
 

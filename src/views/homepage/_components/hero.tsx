@@ -11,6 +11,7 @@ import Button from "@/components/ui/button";
 import HeroExperience from "@/components/models/heromodels/hero-experience";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ArrowDown } from "lucide-react";
 
 interface words {
   imagePath: any;
@@ -62,8 +63,7 @@ const HeroSection = () => {
                         width={100}
                         src={word.imagePath}
                         alt={word.text}
-                        className="xl:si
-                        ze-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
+                        className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
                       />
                       <span>{word.text}</span>
                     </span>
@@ -78,9 +78,10 @@ const HeroSection = () => {
             Hi, I&apos;m Adebola based in Nigeria with a passion for code.
           </p>
           <Button
-            className="md:w-80 md:h-16 w-60 h-12 mt-6"
+            className="md:w-80 md:h-16 w-60 h-12 mt-6 text-black"
             id="button"
             text="see my work"
+            icon={<ArrowDown />}
           />
         </header>
         <figure>
@@ -89,7 +90,6 @@ const HeroSection = () => {
           </div>
         </figure>
       </div>
-      
     </section>
   );
 };

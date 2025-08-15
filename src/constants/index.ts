@@ -256,18 +256,18 @@ export const calculateSizes = ({isSmall, isMobile, isTablet}: sizeProp ) => {
 export const workExperiences = [
   {
     id: 1,
-    name: 'Framer',
-    pos: 'Lead Web Developer',
-    duration: '2022 - Present',
-    title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
+    name: 'MystiGrade',
+    pos: 'Front-End Developer',
+    duration: '2024 - Present',
+    title: "Collaborated with a cross-functional team to design essential UI components for exam creation, scheduling, and candidate registration processes",
     icon: '/images/new/framer.svg',
     animation: 'victory',
   },
   {
     id: 2,
-    name: 'Figma',
-    pos: 'Web Developer',
-    duration: '2020 - 2022',
+    name: 'Vechy Graphix',
+    pos: 'Front-End Lead Developer',
+    duration: '2024',
     title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
     icon: '/images/new/figma.svg',
     animation: 'clapping',
@@ -280,5 +280,59 @@ export const workExperiences = [
     title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
     icon: '/images/new/notion.svg',
     animation: 'salute',
+  },
+];
+
+export const expCards = [
+  {
+    review: "Adebola brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+    imgPath: "/images/MistyGrade.png",
+    logoPath: "/images/logo1.png",
+    title: "Frontend Developer",
+    date: "July 2024 - Present",
+    responsibilities: [
+      "Collaborated with a cross-functional team to design essential UI components for exam creation, scheduling and candidate registration processes.",
+      "Integrated APIs to retrieve and present real-time proctoring dashboards, candidate tokens and performance analytics.",
+      "Engaged in agile sprint planning, code reviews, and user testing sessions to enhance features.",
+    ],
+  },
+  {
+    review: "Adebola's contributions to Mystigrade web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
+    imgPath: "/images/exp2.png",
+    logoPath: "/images/logo2.png",
+    title: "Full Stack Developer",
+    date: "June 2020 - December 2023",
+    responsibilities: [
+      "Led the development of Docker's web applications, focusing on scalability.",
+      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
+      "Contributed to open-source projects that were used with the Docker ecosystem.",
+    ],
+  },
+  {
+    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+    imgPath: "/images/exp3.png",
+    logoPath: "/images/logo3.png",
+    title: "React Native Developer",
+    date: "March 2019 - May 2020",
+    responsibilities: [
+      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
+      "Improved app performance and user experience through code optimization and testing.",
+      "Coordinated with the product team to implement features based on feedback.",
+    ],
+  },
+];
+
+export const expLogos = [
+  {
+    name: "logo1",
+    imgPath: "/images/logo1.png",
+  },
+  {
+    name: "logo2",
+    imgPath: "/images/logo2.png",
+  },
+  {
+    name: "logo3",
+    imgPath: "/images/logo3.png",
   },
 ];
