@@ -96,7 +96,7 @@ const ContactSection = () => {
               </a>
             </div>
           </div>
-          <form className="flex-1 mt-12 space-y-6">
+          <form className="flex-1 mt-12 space-y-6" onSubmit={handleSubmit}>
             <div className="flex max-md:flex-col space-x-2 space-y-2">
               <div className="flex flex-col flex-1 space-y-2">
                 <label>Name</label>

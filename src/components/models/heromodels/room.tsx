@@ -24,7 +24,7 @@ export function Room(props: React.ComponentProps<"group">) {
     "/models/optimized-room.glb"
   ) as GLTFResult;
   const matcapTexture = useTexture("/images/textures/mat1.png");
-  const [selectedObjects, setSelectedObjects] = useState<THREE.Object3D[]>([])
+  const [selectedObjects] = useState<THREE.Object3D[]>([])
 
   const curtainMaterial = new THREE.MeshPhongMaterial({
     color: "#d90429",
