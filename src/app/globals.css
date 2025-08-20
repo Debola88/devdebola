@@ -66,6 +66,67 @@ section {
   --color-neutral-100: #f5f5f5;
 }
 
+.test-scroll {
+  animation: scroll 40s linear infinite;
+  animation-play-state: running;
+}
+
+@keyframes test-move {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Infinite Moving Cards Animation - Working Version */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll.hover\:\[animation-play-state\:paused\]:hover {
+  animation-play-state: paused;
+}
+
+.cursor-grab {
+  cursor: grab;
+}
+
+.cursor-grab:active {
+  cursor: grabbing;
+}
+
+/* Ensure the scroller works */
+.scroller {
+  overflow: hidden !important;
+  width: 100%;
+}
+
+.scroller ul {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+/* Hide scrollbars but keep functionality */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* WebKit */
+}
+
+/* Custom scrolling styles */
+.scroller:not(.animate-scroll) {
+  scroll-behavior: smooth;
+}
+
+
+
 @layer utilities {
   .flex-center {
     @apply flex justify-center items-center;
