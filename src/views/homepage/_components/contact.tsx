@@ -28,7 +28,7 @@ const ContactSection = () => {
 
   return (
     <section id="contact" className="md:mt-40 mt-20 sm:px-10 px-5">
-      <div className="card card-border rounded-xl p-4 lg:p-6 mb-5">
+      <div className=" card-border rounded-xl p-4 lg:p-6 mb-5 z-30">
         <TitleHeader title="Get In Touch" sub="contact me" />
         <div className="flex max-md:flex-col">
           <div className="flex-1 mt-12">
