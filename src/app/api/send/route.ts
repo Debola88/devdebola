@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
@@ -7,7 +8,6 @@ export async function POST(request: NextRequest) {
   try {
     const { name, email, message } = await request.json();
 
-    // Basic validation
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'All fields are required' },
@@ -15,7 +15,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return NextResponse.json(
@@ -25,8 +24,8 @@ export async function POST(request: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>', // Use your verified domain
-      to: ['adebolabadejo11@gmail.com'], // Your email address
+      from: 'Portfolio Contact devdebo.com',
+      to: ['adebolabadejo11@gmail.com'],
       subject: `New Portfolio Contact from ${name}`,
       html: `
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f8f9fa;">
