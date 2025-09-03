@@ -69,7 +69,8 @@ const ContactSection = () => {
       } else {
         toast.error(result.error || "Something went wrong. Please try again.");
       }
-    } catch (error) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (err) {
       setStatus({
         type: "error",
         message: "Network error. Please check your connection and try again.",
