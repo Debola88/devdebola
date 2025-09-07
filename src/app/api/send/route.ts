@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 

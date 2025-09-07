@@ -197,43 +197,6 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
-    subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
-    texture: '/textures/project/project5.mp4',
-    logo: '/images/new/project-logo5.png',
-    logoStyle: {
-      backgroundColor: '#1C1A43',
-      border: '0.2px solid #252262',
-      boxShadow: '0px 0px 60px 0px #635BFF4D',
-    },
-    spotlight: '/images/new/spotlight5.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/images/new/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: '/images/new/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/images/new/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/images/new/framer.png',
-      },
-    ],
-  },
 ];
 
 interface sizeProp {
@@ -274,10 +237,10 @@ export const workExperiences = [
   },
   {
     id: 3,
-    name: 'Notion',
-    pos: 'Junior Web Developer',
-    duration: '2019 - 2020',
-    title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
+    name: 'New Horizons',
+    pos: 'Web Developer intern',
+    duration: '2020 - 2021',
+    title: "",
     icon: '/images/new/notion.svg',
     animation: 'salute',
   },
@@ -285,9 +248,9 @@ export const workExperiences = [
 
 export const expCards = [
   {
-    review: "Adebola brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+    review: "Adebola's contributions to Mystigrade web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
     imgPath: "/images/MistyGrade.png",
-    logoPath: "/images/logo1.png",
+    logoPath: "/images/gold-star.png",
     title: "Frontend Developer",
     date: "July 2024 - Present",
     responsibilities: [
@@ -297,27 +260,28 @@ export const expCards = [
     ],
   },
   {
-    review: "Adebola's contributions to Mystigrade web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    review: "Adebola brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
+    imgPath: "/images/vechy.png",
+    logoPath: "/images/vechy.png",
+    title: "Front-End Lead Developer",
+    date: "2024",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
-    ],
+      "Led the development of an Agro-business web application platform as part of a volunteer internship, with a focus on building scalable and user-friendly solutions.",
+      "Collaborated with backend engineers to integrate APIs seamlessly with the frontend, ensuring efficient data flow and smooth user experience.",
+     ],
   },
   {
-    review: "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+    review: "During his internship at New Horizons, Debola demonstrated strong technical skills, creativity, and adaptability. He contributed to team projects with professionalism, collaborated effectively, and delivered responsive solutions. His passion for web development and eagerness to learn make him well-prepared for advanced challenges.",
+    imgPath: "/images/nh-e360-header-logo.png",
+    logoPath: "/images/nh-e360-header-logo.png",
+    title: "Web Developer",
+    date: "2020 - 2021",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+     "Assisted in building and maintaining web applications as part of practical training projects, applying modern web development technologies.",
+     "Collaborated with instructors and peers on group projects to strengthen understanding of frontend and backend integration.",
+     "Developed responsive user interfaces using HTML, CSS, JavaScript, and React, improving usability for training applications.",
+     "Participated in code reviews and debugging sessions, gaining experience in writing clean and maintainable code.",
+     "Supported the deployment of web applications in classroom environments, ensuring functionality across multiple systems.",
     ],
   },
 ];

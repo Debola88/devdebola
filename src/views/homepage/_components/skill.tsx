@@ -1,6 +1,5 @@
 import { InfiniteSkillsCards } from "@/components/ui/infinite-skill-card";
 
-// Frontend Skills
 const frontendSkills = [
   {
     name: "React",
@@ -49,22 +48,10 @@ const backendSkills = [
     description: "Server-side JavaScript",
   },
   {
-    name: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-    level: "Intermediate",
-    description: "Backend development",
-  },
-  {
     name: "MongoDB",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
     level: "Intermediate",
     description: "NoSQL database",
-  },
-  {
-    name: "PostgreSQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    level: "Intermediate",
-    description: "Relational database",
   },
   {
     name: "Express.js",
@@ -89,18 +76,6 @@ const toolsSkills = [
     description: "Version control",
   },
   {
-    name: "Docker",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    level: "Intermediate",
-    description: "Containerization",
-  },
-  {
-    name: "AWS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-    level: "Intermediate",
-    description: "Cloud services",
-  },
-  {
     name: "Figma",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
     level: "Intermediate",
@@ -116,7 +91,7 @@ const toolsSkills = [
 
 export default function SkillsSection() {
   return (
-    <section className="py-20 bg-black overflow-hidden">
+    <section className="py-20 bg-black overflow-hidden" id="skill">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">

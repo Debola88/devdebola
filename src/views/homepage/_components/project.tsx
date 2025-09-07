@@ -27,7 +27,7 @@ const Project = () => {
   };
 
   return (
-    <section className="sm:px-10 px-5 my-20">
+    <section className="sm:px-10 px-5 my-20" id="work">
       <p className="sm:text-4xl text-3xl font-semibold text-gray_gradient">My Work</p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         <div className="flex flex-col gap-5 relative p-10 px-5 shadow-2xl shadow-black-200 text-[#afb0b6]">

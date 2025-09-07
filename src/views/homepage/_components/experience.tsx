@@ -66,7 +66,7 @@ const Experience = () => {
           sub="💼 My Career Overview"
         />
         <div className="mt-32 relative">
-          <div className="relative z-50 xl:space-y-32 space-y-10 pb-32">
+          <div className="relative z-20 xl:space-y-32 space-y-10 pb-32">
             {expCards.map((card, index) => (
               <div key={card.title} className="exp-card-wrapper">
                 <div className="xl:w-2/6">

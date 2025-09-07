@@ -127,7 +127,7 @@ const About = () => {
               <p className="grid-headtext">My Passion for Coding</p>
               <p className="grid-subtext">
                 I love solving problems and building things through code.
-                Programming isn&apos;t just my profession—it&apos;s my passion.
+                Programming isn&apos;t just my profession it&apos;s my passion.
                 I enjoy exploring new technologies, and enhancing my skills.
               </p>
             </div>

@@ -11,7 +11,8 @@ import Button from "@/components/ui/button";
 import HeroExperience from "@/components/models/heromodels/hero-experience";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ArrowDown } from "lucide-react";
+import { Eye } from "lucide-react";
+import { toast } from "sonner";
 
 interface words {
   imagePath: any;
@@ -43,9 +44,6 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
-        <Image src="/" height={100} width={100} alt="" className="" />
-      </div>
       <div className=" hero-layout">
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="hero-text">
@@ -79,9 +77,13 @@ const HeroSection = () => {
           </p>
           <Button
             className="md:w-80 md:h-16 w-60 h-12 mt-6 text-black"
-            id="button"
-            text="see my work"
-            icon={<ArrowDown />}
+            // id="button"
+            text="View resume"
+            icon={<Eye />}
+            onClick={() => {
+              window.open("/Adebola's Resume.pdf", "_blank");
+              toast.success("Ready to View");
+            }}
           />
         </header>
         <figure>

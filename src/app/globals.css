@@ -66,12 +66,12 @@ section {
   --color-neutral-100: #f5f5f5;
 }
 
-.test-scroll {
+.animate-scroll {
   animation: scroll 40s linear infinite;
   animation-play-state: running;
 }
 
-@keyframes test-move {
+@keyframes animate-scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }

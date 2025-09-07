@@ -8,7 +8,6 @@ export const InfiniteSkillsCards = ({
   direction = "left",
   speed = "fast",
   pauseOnHover = true,
-  enableManualScroll = true,
   className,
 }: {
   items: {
@@ -20,22 +19,15 @@ export const InfiniteSkillsCards = ({
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
   pauseOnHover?: boolean;
-  enableManualScroll?: boolean;
   className?: string;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLUListElement>(null);
   const [start, setStart] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isManualScrolling, setIsManualScrolling] = useState(false);
 
   useEffect(() => {
     addAnimation();
-    
-    if (enableManualScroll) {
-      setupManualScroll();
-    }
-  }, [enableManualScroll]);
+  }, []);
 
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
@@ -55,156 +47,6 @@ export const InfiniteSkillsCards = ({
     }
   }
 
-  function setupManualScroll() {
-    const container = containerRef.current;
-    const scroller = scrollerRef.current;
-    if (!container || !scroller) return;
-
-    let isDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-    // let animationId: number;
-
-    // Get current transform value
-    const getCurrentTransform = () => {
-      const style = window.getComputedStyle(scroller);
-      const matrix = style.transform;
-      if (matrix === 'none') return 0;
-      const values = matrix.split('(')[1].split(')')[0].split(',');
-      return parseFloat(values[4]) || 0;
-    };
-
-    // Set transform manually
-    const setTransform = (x: number) => {
-      // Keep within bounds for infinite effect
-      const maxWidth = scroller.scrollWidth / 2; // Half because we duplicated
-      const normalizedX = ((x % maxWidth) + maxWidth) % maxWidth;
-      scroller.style.transform = `translateX(${-normalizedX}px)`;
-    };
-
-    // Mouse events for drag scrolling
-    const handleMouseDown = (e: MouseEvent) => {
-      isDown = true;
-      setIsManualScrolling(true);
-      setIsPaused(true);
-      startX = e.pageX;
-      scrollLeft = getCurrentTransform();
-      container.style.cursor = 'grabbing';
-      
-      // Disable CSS animation temporarily
-      scroller.style.animation = 'none';
-    };
-
-    const handleMouseLeave = () => {
-      if (isDown) {
-        isDown = false;
-        setIsManualScrolling(false);
-        // Resume animation after a short delay
-        setTimeout(() => {
-          scroller.style.animation = '';
-          setIsPaused(false);
-        }, 1000);
-        container.style.cursor = 'grab';
-      }
-    };
-
-    const handleMouseUp = () => {
-      if (isDown) {
-        isDown = false;
-        setIsManualScrolling(false);
-        // Resume animation after a short delay
-        setTimeout(() => {
-          scroller.style.animation = '';
-          setIsPaused(false);
-        }, 1000);
-        container.style.cursor = 'grab';
-      }
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX;
-      const walk = (x - startX) * 1.5; // Scroll speed multiplier
-      setTransform(scrollLeft - walk);
-    };
-
-    // Wheel event for scroll wheel
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      setIsManualScrolling(true);
-      setIsPaused(true);
-      
-      // Disable CSS animation
-      scroller.style.animation = 'none';
-      
-      const currentTransform = getCurrentTransform();
-      setTransform(currentTransform - e.deltaY);
-      
-      // Resume animation after scrolling stops
-      clearTimeout(wheelTimeout);
-      wheelTimeout = setTimeout(() => {
-        setIsManualScrolling(false);
-        scroller.style.animation = '';
-        setIsPaused(false);
-      }, 1500);
-    };
-
-    let wheelTimeout: NodeJS.Timeout;
-
-    // Add event listeners
-    container.addEventListener('mousedown', handleMouseDown);
-    container.addEventListener('mouseleave', handleMouseLeave);
-    container.addEventListener('mouseup', handleMouseUp);
-    container.addEventListener('mousemove', handleMouseMove);
-    container.addEventListener('wheel', handleWheel, { passive: false });
-
-    // Touch events for mobile
-    let touchStartX = 0;
-    let touchScrollLeft = 0;
-
-    const handleTouchStart = (e: TouchEvent) => {
-      setIsManualScrolling(true);
-      setIsPaused(true);
-      scroller.style.animation = 'none';
-      touchStartX = e.touches[0].pageX;
-      touchScrollLeft = getCurrentTransform();
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (!touchStartX) return;
-      const x = e.touches[0].pageX;
-      const walk = (x - touchStartX) * 1.5;
-      setTransform(touchScrollLeft + walk);
-    };
-
-    const handleTouchEnd = () => {
-      touchStartX = 0;
-      setTimeout(() => {
-        setIsManualScrolling(false);
-        scroller.style.animation = '';
-        setIsPaused(false);
-      }, 1000);
-    };
-
-    container.addEventListener('touchstart', handleTouchStart, { passive: false });
-    container.addEventListener('touchmove', handleTouchMove, { passive: false });
-    container.addEventListener('touchend', handleTouchEnd);
-
-    // Cleanup
-    return () => {
-      container.removeEventListener('mousedown', handleMouseDown);
-      container.removeEventListener('mouseleave', handleMouseLeave);
-      container.removeEventListener('mouseup', handleMouseUp);
-      container.removeEventListener('mousemove', handleMouseMove);
-      container.removeEventListener('wheel', handleWheel);
-      container.removeEventListener('touchstart', handleTouchStart);
-      container.removeEventListener('touchmove', handleTouchMove);
-      container.removeEventListener('touchend', handleTouchEnd);
-      if (wheelTimeout) clearTimeout(wheelTimeout);
-    };
-  }
-
   const getAnimationDuration = () => {
     if (speed === "fast") return "20s";
     if (speed === "normal") return "40s";
@@ -222,7 +64,6 @@ export const InfiniteSkillsCards = ({
         className={cn(
           "scroller relative z-20 overflow-hidden",
           "[mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
-          enableManualScroll && "cursor-grab select-none",
           className
         )}
       >
@@ -230,15 +71,14 @@ export const InfiniteSkillsCards = ({
           ref={scrollerRef}
           className={cn(
             "flex min-w-full shrink-0 gap-6 py-4 w-max",
-            start && !isPaused && "animate-scroll test-scroll",
-            pauseOnHover && !isManualScrolling && "hover:[animation-play-state:paused]"
+            start && "animate-scroll",
+            pauseOnHover && "hover:[animation-play-state:paused]"
           )}
           style={{
             width: "max-content",
-            animationDuration: getAnimationDuration(),
+            "--duration": getAnimationDuration(),
             animationDirection: getAnimationDirection(),
-            animationPlayState: isPaused ? 'paused' : 'running'
-          }}
+          } as React.CSSProperties}
         >
           {items.map((item, idx) => (
             <li
