@@ -4841,4 +4841,4 @@ export function DemoComputer(props: React.ComponentProps<"group">) {
   );
 }
 
-useGLTF.preload("/gaming_desktop_pc.glb");
+useGLTF.preload("/models/gaming_desktop_pc.glb");

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-'use client'; // if using App Router
+'use client'; 
 
 import Globe from 'react-globe.gl';
 import { useEffect, useState } from 'react';
@@ -12,7 +12,7 @@ const GlobeComponent = (props: any) => {
   }, []);
 
   if (!mounted) {
-    return <div>Loading globe...</div>; // or a skeleton loader
+    return <div>Loading globe...</div>;
   }
 
   return <Globe {...props} />;
