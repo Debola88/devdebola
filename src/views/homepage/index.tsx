@@ -6,6 +6,7 @@ import Experience from "./_components/experience";
 import ContactSection from "./_components/contact";
 import SkillsSection from "./_components/skill";
 import Navbar from "./_components/navbar";
+import Footer from "./_components/footer";
 
 const HomepageView = () => {
   return (
@@ -17,6 +18,7 @@ const HomepageView = () => {
       <Project />
       <Experience />
       <ContactSection />
+      <Footer />
     </div>
   );
 };
